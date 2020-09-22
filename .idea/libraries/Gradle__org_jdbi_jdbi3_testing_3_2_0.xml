@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jdbi:jdbi3-testing:3.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-testing/3.2.0/be79b09b925a14fcf12e35f7ab04c0801367a411/jdbi3-testing-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-testing/3.2.0/eca4feef4a931dcc79dd1d01ed326b8807f22117/jdbi3-testing-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

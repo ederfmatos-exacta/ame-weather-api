@@ -1,5 +1,6 @@
 package br.com.amedigital.weather.api.service;
 
+import br.com.amedigital.weather.api.controller.request.WaveRequest;
 import br.com.amedigital.weather.api.controller.response.WaveResponse;
 import br.com.amedigital.weather.api.exception.NotFoundException;
 import br.com.amedigital.weather.api.mapper.WaveMapper;
@@ -26,14 +27,14 @@ public class WaveService {
         this.inpeClientService = inpeClientService;
     }
 
-    public Mono<WaveResponse> findWaveByCityName(String cityName) {
+    public Mono<WaveResponse> findWaveByCityName(WaveRequest waveRequest) {
         return inpeClientService
-                .findCityByName(cityName, null)
+                .findCityByName(waveRequest.getCityName(), waveRequest.getState())
                 .switchIfEmpty(Mono.error(new NotFoundException(ErrorMessages.GENERIC_NOT_FOUND_EXCEPTION)))
                 .flatMap(city -> inpeClientService.findWaveByCity(city.getCode()))
                 .switchIfEmpty(Mono.error(new NotFoundException(ErrorMessages.GENERIC_NOT_FOUND_EXCEPTION)))
                 .flatMap(response -> weatherRepository.save(mapper.INPEWaveCityResponseToEntity(response)).then(Mono.just(response)))
-                .doOnError(throwable -> LOG.error("=== Error finding weather to city with name: {} ===", cityName))
+                .doOnError(throwable -> LOG.error("=== Error finding weather to city with name: {} ===", waveRequest.getCityName()))
                 .onErrorMap(throwable -> throwable)
                 .map(mapper::entityToResponse);
     }

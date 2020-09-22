@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.guice:spring-guice:1.1.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.guice/spring-guice/1.1.4.RELEASE/ced247ee0c901c7dbc13ab9c118fed2c0bbc9b11/spring-guice-1.1.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.guice/spring-guice/1.1.4.RELEASE/487d80f7d9dd6d63a7c32d88f5d5cf64ca33114a/spring-guice-1.1.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

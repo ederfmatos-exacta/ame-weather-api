@@ -25,6 +25,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -41,6 +42,8 @@ dependencies {
     implementation 'io.projectreactor.addons:reactor-extra:3.3.1.RELEASE'
     implementation 'org.springframework.cloud:spring-cloud-starter-config:2.1.1.RELEASE'
 
+    implementation 'com.github.ederfmatos:MockBean:0.1'
+
     // DATABASE
     implementation 'org.flywaydb:flyway-core:6.3.0'
     implementation 'org.jdbi:jdbi3-core:3.11.1'
@@ -54,8 +57,10 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.13'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' // <- No version
     }
+
+    testCompile group: 'org.jdbi', name: 'jdbi3-testing', version: '3.2.0'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'org.springframework.security:spring-security-test'
 
@@ -86,4 +91,8 @@ flyway {
     user = 'root'
     password = '123456'
     schemas = ['db_ame_weather']
+}
+
+test {
+    useJUnitPlatform()
 }

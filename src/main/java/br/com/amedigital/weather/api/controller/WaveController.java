@@ -1,5 +1,6 @@
 package br.com.amedigital.weather.api.controller;
 
+import br.com.amedigital.weather.api.controller.request.WaveRequest;
 import br.com.amedigital.weather.api.controller.response.WaveResponse;
 import br.com.amedigital.weather.api.service.WaveService;
 import org.slf4j.Logger;
@@ -23,8 +24,8 @@ public class WaveController {
     }
 
     @GetMapping
-    public Mono<WaveResponse> findWaveByCityName(@RequestParam("cityName") String cityName) {
-        return waveService.findWaveByCityName(cityName)
+    public Mono<WaveResponse> findWaveByCityName(WaveRequest waveRequest) {
+        return waveService.findWaveByCityName(waveRequest)
                 .doOnTerminate(() -> LOG.info("=== Finish finding wave to city ==="));
     }
 }

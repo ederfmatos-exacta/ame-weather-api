@@ -123,4 +123,17 @@ public class WeatherResponse {
             return weatherResponse;
         }
     }
+
+    @Override
+    public String toString() {
+        return "WeatherResponse{" +
+                "id='" + id + '\'' +
+                ", weatherCityCode=" + weatherCityCode +
+                ", weatherCity='" + weatherCity + '\'' +
+                ", weatherDate=" + weatherDate +
+                ", maximumTemperature=" + maximumTemperature +
+                ", minimumTemperature=" + minimumTemperature +
+                ", weather=" + weather +
+                '}';
+    }
 }

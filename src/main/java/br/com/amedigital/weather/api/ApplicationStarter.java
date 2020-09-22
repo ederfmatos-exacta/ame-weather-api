@@ -9,7 +9,6 @@ import java.util.Locale;
 
 @SpringBootApplication
 @EnableWebFlux
-@EnableAutoConfiguration
 public class ApplicationStarter {
 
     public static void main(String[] args) {

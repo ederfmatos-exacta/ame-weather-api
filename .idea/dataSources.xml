@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MySQL - db_ame_weather@localhost" uuid="c7e080f8-96b3-49d6-9937-ddcad3fbe30b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/db_ame_weather</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ame-weather-api.main/Hibernate" uuid="a6728307-c9c4-49ae-b548-9522d1a5c6c2">
+      <driver-ref>cassandra</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.dbschema.CassandraJdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:cassandra://Sao_Paulo:3306</jdbc-url>
+    </data-source>
+  </component>
+</project>
